@@ -9,6 +9,10 @@ $ npm install
 $ mkdir db
 $ mongod --dbpath=./db
 $ node server.js
-localhost:5000
+```
 
+### Open in localhost
+
+```
+localhost:5000
 ```
