@@ -1,0 +1,34 @@
+{
+  "name": "ReactChallenge",
+  "version": "1.0.0",
+  "description": "simple crud app built with react",
+  "main": "server.js",
+  "scripts": {
+    "test": "node_modules/mocha/bin/mocha test"
+  },
+  "keywords": [],
+  "author": "Ardian Ajvazi",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.5.2",
+    "babel-loader": "^6.2.2",
+    "babel-preset-es2015": "^6.5.0",
+    "babel-preset-react": "^6.5.0",
+    "babel-preset-stage-1": "^6.5.0",
+    "chai": "^3.4.1",
+    "chai-http": "^1.0.0",
+    "gulp": "^3.9.0",
+    "gulp-mocha": "^2.2.0",
+    "mocha": "^2.3.4",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7",
+    "webpack": "^1.12.13",
+    "webpack-stream": "^3.1.0"
+  },
+  "dependencies": {
+    "bcrypt": "^0.8.5",
+    "body-parser": "^1.14.2",
+    "express": "^4.13.3",
+    "mongoose": "^4.3.6"
+  }
+}

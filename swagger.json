@@ -1,0 +1,80 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "0.0.0",
+        "title": "Offer"
+    },
+    "definitions": {
+        "Offer": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "amount": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "maximumRides": {
+                    "type": "number",
+                    "format": "integer"
+                }
+            }
+        },
+        "Error": {
+            "type": "object",
+            "properties": {
+                "message": {
+                    "type": "string"
+                },
+                "code": {
+                    "type": "number"
+                }
+            }
+        }
+    },
+    "paths": {
+        "/offer": {
+            "post": {
+                "description": "Create a new offer\n",
+                "responses": {
+                    "200": {
+                        "description": "Ok"
+                    }
+                }
+            }
+        },
+        "/offer/:id": {
+            "delete": {
+                "summary": "Delete an Offer",
+                "description": "Delete an Offer",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/offers/:limit": {
+            "get": {
+                "summary": "Retrieve a list of offers with optional limit",
+                "description": "List all offers\nOptional query param of **size** determines\nsize of returned array\n",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "title": "ArrayOfOffers",
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Offer"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
