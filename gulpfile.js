@@ -39,15 +39,6 @@ gulp.task('build:dev', () => {
     .pipe(gulp.dest('build/'));
 });
 
-
-gulp.task('test', () => {
-  return gulp.src('tests/*.js')
-   .pipe(mocha())
-   .once('end', function(){
-  process.exit();
-});
-});
-
 gulp.task('sass:dev', () => {
   gulp.src(__dirname + '/app/sass/*.scss')
    .pipe(sass().on('error', sass.logError))
@@ -56,5 +47,11 @@ gulp.task('sass:dev', () => {
    .pipe(gulp.dest(__dirname + '/build/css'));
 });
 
-gulp.task('default', ['static:dev', 'build:dev', 'sass:dev', 'test']);
+gulp.task('test', () => {
+  return gulp.src('tests/*.js')
+   .pipe(mocha());
+});
+
+gulp.task('default', ['static:dev', 'build:dev', 'sass:dev']);
+
 // gulp.task('default', ['test']);
