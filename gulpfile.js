@@ -27,7 +27,10 @@ gulp.task('build:dev', () => {
           {
             test: /\.jsx?$/,
             exclude: /node_modules/,
-            loader: 'babel-loader'
+            loader: 'babel-loader',
+            query: {
+              presets: ['es2015', 'stage-1', 'react']
+            }
           }
         ]
       },
@@ -39,7 +42,10 @@ gulp.task('build:dev', () => {
 
 gulp.task('test', () => {
   return gulp.src('tests/*.js')
-   .pipe(mocha());
+   .pipe(mocha())
+   .once('end', function(){
+  process.exit();
+});
 });
 
 gulp.task('sass:dev', () => {
@@ -50,5 +56,5 @@ gulp.task('sass:dev', () => {
    .pipe(gulp.dest(__dirname + '/build/css'));
 });
 
-gulp.task('default', ['static:dev', 'build:dev', 'sass:dev']);
+gulp.task('default', ['static:dev', 'build:dev', 'sass:dev', 'test']);
 // gulp.task('default', ['test']);
