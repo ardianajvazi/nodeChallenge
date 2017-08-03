@@ -8,6 +8,7 @@ $ cd nodeChallenge
 $ npm install
 $ mkdir db
 $ mongod --dbpath=./db
+$ gulp
 $ node server.js
 ```
 
